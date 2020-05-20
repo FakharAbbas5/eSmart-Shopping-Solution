@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="mainTitle">Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <div >
+    <img src="\assets\sb.png" >
+    
+
+  </div>
+  <div class="div2">
+    
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="Enter Your Name" [(ngModel)]="Customer_Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="email" placeholder="Enter Your Email" [(ngModel)]="Email" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="Enter Your Contact" [(ngModel)]="Contact"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="Enter Password" [(ngModel)]="Password"></ion-input>
+    </ion-item>
+
+    
+
+    <ion-button color="#FBEAEB" expand="block" (click)="SignUp()">Sign Up</ion-button>
+
+
+    <span (click)="SignIn()">Already Have an Account?Sign In Now!</span>
+  </ion-list>
+  </div>
+</ion-content>

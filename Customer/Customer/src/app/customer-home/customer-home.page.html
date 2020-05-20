@@ -1,0 +1,257 @@
+<ion-header>
+  <ion-toolbar color="tertiary" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mainTitle">Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card text-center>
+      <img src="\assets\ecommerce.png" >
+    <ion-card-content>Scan your Product to Add</ion-card-content>
+  </ion-card>
+  <ion-button color="#FBEAEB" expand="block" (click)="scan()" padding-horizontal>Scan Now!</ion-button>
+  <ion-list *ngIf="OPEN==1">
+  <ion-item >
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <b>Name</b>
+        </ion-col>
+        <ion-col size="3">
+          <b>Brand</b>
+        </ion-col>
+        <ion-col size="2">
+          <b>Price</b>
+        </ion-col>
+        <ion-col size="3">
+          <b>Qty</b>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+
+
+    <ion-item *ngIf="DC1==1">
+      
+        <ion-grid>
+      <ion-row>
+      <ion-col size="3">
+        <div>{{Detail1[1]}}</div>
+      </ion-col>
+      <ion-col size="4">
+        <div>{{Detail1[2]}}</div>
+      </ion-col>
+      <ion-col  size="2">
+        <div>{{Detail1[3]}}</div>
+      </ion-col>
+      <ion-col size="2">
+        <div >{{Detail1[5]}}</div>
+      </ion-col>
+       
+      </ion-row>
+      
+      </ion-grid>
+      
+    </ion-item>
+    <ion-item *ngIf="DC2==1">
+      
+        <ion-grid>
+      <ion-row>
+      <ion-col size="3">
+        <div>{{Detail2[1]}}</div>
+      </ion-col>
+      <ion-col size="4">
+        <div>{{Detail2[2]}}</div>
+      </ion-col>
+      <ion-col  size="2">
+        <div>{{Detail2[3]}}</div>
+      </ion-col>
+      <ion-col size="2">
+        <div>{{Detail2[5]}}</div>
+      </ion-col>
+      
+      </ion-row>
+      
+      </ion-grid>
+      
+    </ion-item>
+    <ion-item *ngIf="DC3==1">
+      
+        <ion-grid>
+      <ion-row>
+      <ion-col size="3">
+        <div>{{Detail3[1]}}</div>
+      </ion-col>
+      <ion-col size="4">
+        <div>{{Detail3[2]}}</div>
+      </ion-col>
+      <ion-col  size="2">
+        <div>{{Detail3[3]}}</div>
+      </ion-col>
+      <ion-col size="2">
+        <div>{{Detail3[5]}}</div>
+      </ion-col>
+      
+      </ion-row>
+      
+      </ion-grid>
+      
+    </ion-item>
+  
+<ion-item *ngIf="DC4==1">
+    <ion-grid>
+  <ion-row>
+  <ion-col size="3">
+    <div>{{Detail4[1]}}</div>
+  </ion-col>
+  <ion-col size="4">
+    <div>{{Detail4[2]}}</div>
+  </ion-col>
+  <ion-col  size="2">
+    <div>{{Detail4[3]}}</div>
+  </ion-col>
+  <ion-col size="2">
+    <div>{{Detail4[5]}}</div>
+  </ion-col>
+   
+  </ion-row>
+  
+  </ion-grid>
+  
+    </ion-item>
+        <ion-item *ngIf="DC5==1">
+            <ion-grid>
+          <ion-row>
+          <ion-col size="3">
+            <div>{{Detail5[1]}}</div>
+          </ion-col>
+          <ion-col size="4">
+            <div>{{Detail5[2]}}</div>
+          </ion-col>
+          <ion-col  size="2">
+            <div>{{Detail5[3]}}</div>
+          </ion-col>
+          <ion-col size="2">
+            <div>{{Detail5[5]}}</div>
+          </ion-col>
+                 </ion-row>
+          
+          </ion-grid>
+              </ion-item>
+        <ion-item *ngIf="DC6==1">
+          <ion-grid>
+          <ion-row>
+          <ion-col size="3">
+            <div>{{Detail6[1]}}</div>
+          </ion-col>
+          <ion-col size="4">
+            <div>{{Detail6[2]}}</div>
+          </ion-col>
+          <ion-col  size="2">
+            <div>{{Detail6[3]}}</div>
+          </ion-col>
+          <ion-col size="2">
+            <div>{{Detail6[5]}}</div>
+          </ion-col>
+           </ion-row>
+          
+          </ion-grid>
+          
+    </ion-item>
+        <ion-item *ngIf="DC7==1">
+            <ion-grid>
+          <ion-row>
+          <ion-col size="3">
+            <div>{{Detail7[1]}}</div>
+          </ion-col>
+          <ion-col size="4">
+            <div>{{Detail7[2]}}</div>
+          </ion-col>
+          <ion-col  size="2">
+            <div>{{Detail7[3]}}</div>
+          </ion-col>
+          <ion-col size="2">
+            <div>{{Detail7[5]}}</div>
+          </ion-col>
+          </ion-row>
+          
+          </ion-grid>
+          
+    </ion-item>
+        <ion-item *ngIf="DC8==1">
+            <ion-grid>
+          <ion-row>
+          <ion-col size="3">
+            <div>{{Detail8[1]}}</div>
+          </ion-col>
+          <ion-col size="4">
+            <div>{{Detail8[2]}}</div>
+          </ion-col>
+          <ion-col  size="2">
+            <div>{{Detail8[3]}}</div>
+          </ion-col>
+          <ion-col size="2">
+            <div>{{Detail8[5]}}</div>
+          </ion-col>
+          </ion-row>
+          
+          </ion-grid>
+          
+    </ion-item>
+    <ion-item *ngIf="DC9==1">
+        <ion-grid>
+      <ion-row>
+      <ion-col size="3">
+        <div>{{Detail9[1]}}</div>
+      </ion-col>
+      <ion-col size="4">
+        <div>{{Detail9[2]}}</div>
+      </ion-col>
+      <ion-col  size="2">
+        <div>{{Detail9[3]}}</div>
+      </ion-col>
+      <ion-col size="2">
+        <div>{{Detail9[5]}}</div>
+      </ion-col>
+            </ion-row>
+      
+      </ion-grid>
+      
+</ion-item>
+<ion-item *ngIf="DC10==1">
+  <ion-grid>
+<ion-row>
+<ion-col size="3">
+  <div>{{Detail10[1]}}</div>
+</ion-col>
+<ion-col size="4">
+  <div>{{Detail10[2]}}</div>
+</ion-col>
+<ion-col  size="2">
+  <div>{{Detail10[3]}}</div>
+</ion-col>
+<ion-col size="2">
+  <div>{{Detail10[5]}}</div>
+</ion-col>
+ <ion-col size="1">
+  <ion-icon name="trash" (click)="deleteInventory(data.Product_Id)" style="color:#BA7B48"></ion-icon>
+ </ion-col>
+</ion-row>
+
+</ion-grid>
+
+</ion-item>
+    <h5></h5>
+    
+  
+  <ion-button color="#FBEAEB" expand="block" (click)="another()" padding-horizontal>Place Another Order</ion-button>
+  <ion-button color="#FBEAEB" expand="block" (click)="placeOrder()" padding-horizontal>Check Out</ion-button>
+</ion-list>
+  <div>
+
+  </div>
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="tertiary" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mainTitle">History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<h3 style="text-align: center">Total Number of Processed Orders: {{Orders}}</h3>
+<ion-item >
+  <ion-grid>
+    <ion-row >
+      <ion-col class="users" size="1">
+        <div>Sales ID</div>
+      </ion-col>
+      <ion-col class="users" size="3">
+          <div>Customer Name</div>
+        </ion-col>
+        <ion-col class="users" size="4">
+          <div>Reference</div>
+        </ion-col>
+        <ion-col class="users" size="3">
+          <div>Date</div>
+        </ion-col>
+    </ion-row>         
+  </ion-grid>
+</ion-item>
+
+
+<ion-item *ngFor="let data of resonse">
+  <ion-grid>
+    <ion-row >
+      <ion-col class="users" size="1">
+        <div>{{data.Sales_Id}}</div>
+      </ion-col>
+      <ion-col class="users" size="3">
+          <div>{{data.Customer_Name}}</div>
+        </ion-col>
+        <ion-col class="users" size="4">
+          <div>{{data.Reference}}</div>
+        </ion-col>
+        <ion-col class="users" size="3">
+          <div>{{data.Date}}</div>
+        </ion-col>
+    </ion-row>         
+  </ion-grid>
+</ion-item>
+
+
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu-button"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mainTitle">Complaints</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img src="\assets\complaint.png" alt="">
+  <h3 style="text-align: center">Complaints:</h3>
+  <ion-list >
+    <ion-item *ngFor="let data of getComplaint">
+      <ion-grid >
+        <ion-row>
+          <ion-col size="4">
+            <h4>Complaint {{data.Complaints_Id}}</h4>
+          </ion-col>
+          <ion-col size="6">
+              <h4 style="opacity: 0.5; ">Customer: {{data.Customer_Name}}</h4>
+            </ion-col> 
+          <ion-col size="2">
+              <ion-icon name="eye" (click)="RedirectMeToComplaint(data.Complaints_Id)"></ion-icon>
+          </ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

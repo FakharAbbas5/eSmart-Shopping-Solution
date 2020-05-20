@@ -1,0 +1,44 @@
+
+<ion-header>
+  <ion-toolbar color="primary" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu-button"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mainTitle">Sales</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <h3 >Sales Details</h3>
+
+
+
+<!-- <div id="columnchart_values" style="width: 900px; height: 300px;"></div> -->
+<ion-list>
+  <ion-item>
+    <ion-label>Start Date</ion-label>
+<ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" placeholder="Select Date" [(ngModel)]="ddate"></ion-datetime>
+</ion-item>
+<ion-item>
+    <ion-label>End Date</ion-label>
+<ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" placeholder="Select Date" [(ngModel)]="ddate1">{{ddate1}}</ion-datetime>
+</ion-item>
+<button expand="block" (click)="showChart()" style="width: 100%;margin-top: 15px;
+border-radius: 20px;
+color: #FBEAEB;
+background: #BA7B48;
+width: 100%;
+height: 33px;">Sales Report</button>  
+</ion-list>
+<div id="chart_div" style="margin-left: -100px;width: 90%;"></div>
+</ion-content>
+<!-- 
+<div *ngIf="display2==1">
+    <ion-item>
+      <ion-label>Start Date</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" [(ngModel)]="date1"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label>End Date</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" [(ngModel)]="date2"></ion-datetime>
+      </ion-item>
+      <ion-button (click)="ConfirmDates(date1,date2)"></ion-button>   -->

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu-button"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mainTitle">Salesman Management</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <div>
+    
+    <ion-list>
+        <ion-item>
+            <ion-label position="floating" >ID</ion-label>
+            <ion-input [(ngModel)]="Salesman_Id"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input [(ngModel)]="Salesman_Name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input [(ngModel)]="Email" type="email" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" required></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label position="floating">Contact</ion-label>
+              <ion-input [(ngModel)]="Contact" pattern="^\d{11}$" required></ion-input>
+            </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input [(ngModel)]="Password" pattern="^(?=.*\d).{4,12}$" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Join Date</ion-label>
+            <ion-input [(ngModel)]="Salesman_Join_Date"></ion-input>
+          </ion-item>
+          
+          
+    
+          <ion-button color="#BA7B48" class="b2" expand="block" (click)="UpdateSalesman()" >Update Salesman </ion-button>
+    
+  </ion-list>
+
+</div>
+</ion-content>

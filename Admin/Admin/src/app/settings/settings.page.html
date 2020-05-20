@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu-button"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mainTitle" text-center>
+      Settings
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment [(ngModel)]="pet" scrollable>
+    <ion-segment-button value="user" selected>
+      <ion-icon name="trash"></ion-icon>
+      <b>Remove Users</b>
+    </ion-segment-button>
+    <ion-segment-button value="password" checked>
+      <ion-icon name="finger-print"></ion-icon>
+      <b>Change Password</b>
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'user'" padding>
+      <ion-item>
+        <ion-searchbar showCancelButton cancelButtonText="Cancel"></ion-searchbar>
+
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <b>Name</b>
+            </ion-col>
+            <ion-col>
+              <b>Position</b>
+            </ion-col>
+            <ion-col>
+              <b>Select</b>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+<ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="users">
+        Fakhar
+      </ion-col>
+      <ion-col class="users">
+        Salesman
+      </ion-col>
+      <ion-col>
+        <ion-icon name="create"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="trash"></ion-icon>
+      </ion-col>
+  
+    </ion-row>
+  </ion-grid>
+
+</ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="users">
+              
+            </ion-col>
+            <ion-col class="users">
+              
+            </ion-col>
+            <ion-col>
+              <ion-icon name="create"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <ion-icon name="trash"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+        <ion-button color="#2F3C7E" class="b2" expand="block" (click)="showToastPass()">Remove Users</ion-button>
+
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'password'" padding>
+      <ion-item>
+          <ion-label position="floating">Enter Current Password</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Enter New Password</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">ReEnter New Password</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-button color="#2F3C7E" class="b2" expand="block" (click)="showToastPass()">Change Password</ion-button>
+    </ion-list>
+
+  </div>
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mainTitle">Complaints</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-icon name="clipboard" id="complaint"></ion-icon>
+      <h5>Have a Complaint?</h5>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-textarea placeholder="Write here.." [(ngModel)]="Complaint_Description" ></ion-textarea>
+    </ion-card-content>
+  </ion-card>
+  <ion-item>
+    <ion-label>Related to:</ion-label>
+    <ion-select placeholder="Select One" [(ngModel)]="Complaint_Type">
+      <ion-select-option value="Inventory Isssue">Inventory Issue</ion-select-option>
+      <ion-select-option value="Communication Issue">Communication Issue</ion-select-option>
+      <ion-select-option value="App Usage">App Usage Issue</ion-select-option>
+      <ion-select-option value="Management">Management</ion-select-option>
+        <ion-select-option value="Other">Other</ion-select-option>
+    </ion-select>
+  </ion-item>
+    
+    <ion-item [hidden]="true">
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type="text" [(ngModel)]="Customer_Name" value="Khubaib"></ion-input>
+    </ion-item>
+    <ion-item [hidden]="true">
+        <ion-label position="floating">Date</ion-label>
+        <ion-input type="text" [(ngModel)]="Date" value="2019-05-05"></ion-input>
+    </ion-item>
+    <ion-item [hidden]="true">
+        <ion-label position="floating">Status</ion-label>
+        <ion-input type="text" [(ngModel)]="Status" value="Pending"></ion-input>
+    </ion-item>
+
+
+
+
+
+    <ion-button color="#FBEAEB" expand="block" (click)="Register()">Register Complaint</ion-button>
+
+</ion-content>

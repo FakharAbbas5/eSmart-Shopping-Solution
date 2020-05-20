@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu-button"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mainTitle">Complaint</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img src="\assets\complaint.png" alt="" id="com">
+  <h3 style="text-align: center">Complaint</h3>
+  
+  <div class="container">
+    <img src="/assets/shop.png" alt="Avatar" style="width:100%;">
+    <p>{{getComplaint.Complaint_Description}}</p>
+    <span class="time-right">11:00</span>
+    
+  </div>
+  <img src="\assets\thumb-down.png" style="width: 25px;height:25px;margin-left:70%;float: left" (click)="unresolved()">      
+  <img src="\assets\resolved.png" style="width: 25px;height:25px;float:left;margin-left: 5%" (click)="resolved()">      
+       
+  
+</ion-content>

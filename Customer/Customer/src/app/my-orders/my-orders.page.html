@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mainTitle">My Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-item >
+      <ion-grid>
+        <ion-row >
+          <ion-col class="users" size="2">
+            <div>Order ID</div>
+          </ion-col>
+          <ion-col class="users" size="4">
+              <div>Product Name</div>
+            </ion-col>
+            <ion-col class="users" size="2">
+              <div>Quantity</div>
+            </ion-col>
+            <ion-col class="users" size="4">
+              <div>Date</div>
+            </ion-col>
+        </ion-row>         
+      </ion-grid>
+    </ion-item>
+    
+    
+    <ion-item *ngFor="let data of resonse">
+      <ion-grid>
+        <ion-row >
+          <ion-col class="users" size="2">
+            <div>{{data.Order_Id}}</div>
+          </ion-col>
+          <ion-col class="users" size="4">
+              <div>{{data.Product_Name}}</div>
+            </ion-col>
+            <ion-col class="users" size="2">
+              <div>{{data.Quantity}}</div>
+            </ion-col>
+            <ion-col class="users" size="4">
+              <div>{{data.Date}}</div>
+            </ion-col>
+        </ion-row>         
+      </ion-grid>
+    </ion-item>
+    
+    
+ 
+</ion-content>

@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar color="primary" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu-button"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mainTitle">Inventory Management</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-segment [(ngModel)]="inventory" scrollable>
+    <ion-segment-button value="add">
+      <ion-icon name="add" ></ion-icon>
+      <b>Add Items</b>
+    </ion-segment-button>
+    <ion-segment-button value="manage" checked="true">
+      <ion-icon name="book"></ion-icon>
+      <b>View Inventory</b>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="inventory">
+    <ion-list *ngSwitchCase="'add'">
+      <ion-item>
+      <ion-label position="floating" >Enter Item Name</ion-label>
+      <ion-input [(ngModel)]="Product_Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" >Enter Brand</ion-label>
+      <ion-input [(ngModel)]="Brand"></ion-input>
+    </ion-item>
+    <ion-item><ion-label>Category</ion-label>
+      <ion-select placeholder="Select One" [(ngModel)]="product_category_id">
+        <ion-select-option value="1">Electronics</ion-select-option>
+        <ion-select-option value="2">Grocery</ion-select-option>
+        <ion-select-option value="3">Crockery</ion-select-option>
+        <ion-select-option value="4">Sports</ion-select-option>
+        <ion-select-option value="5">Furniture</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Sale Price</ion-label>
+      <ion-input type="number"[(ngModel)]="Sale_Price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Purchase Price</ion-label>
+      <ion-input type="number" [(ngModel)]="Purchase_Price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Quantity</ion-label>
+      <ion-input type="number" [(ngModel)]="Product_Qty"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Barcode</ion-label>
+      <ion-input [(ngModel)]="Product_Barcode" pattern="^\d{7}$"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Discount</ion-label>
+      <ion-input  [(ngModel)]="Discount"></ion-input>
+    </ion-item>
+      <ion-button color="#2F3C7E" class="b2" expand="block" (click)="addToInventory()">Add Item</ion-button>
+    
+    </ion-list>
+
+  <ion-list *ngSwitchCase="'manage'" ngSelected="selected" >
+    
+    
+      <ion-item style="background: #1C2A2E">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">
+                <h4><b>ID</b></h4>
+            </ion-col>
+            <ion-col size="5">
+              <h4><b>Name</b></h4>
+            </ion-col>
+            <ion-col size="4">
+              <h4><b>Brand</b></h4>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item *ngFor="let data of getInventory" style="background: #1C2A2E">
+        <ion-grid>
+          <ion-row>
+              <ion-col class="users" size="2">
+                  <div>{{data.Product_Id}}</div>
+                </ion-col>
+            <ion-col class="users" size="5">
+              <div>{{data.Product_Name}}</div>
+            </ion-col>
+            <ion-col class="users" size="4">
+                <div>{{data.Brand}}</div>
+              </ion-col>
+            <ion-col size="1">
+               <ion-icon name="arrow-dropright-circle" (click)="RedirectMe()"  style="color:#BA7B48"></ion-icon>
+              </ion-col>
+
+          </ion-row>         
+        </ion-grid>
+      </ion-item>
+   
+    </ion-list>
+
+  </div>
+</ion-content>

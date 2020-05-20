@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="primary" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu-button" ></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mainTitle">Inventory Management</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Product Id</ion-label>
+        <ion-input [(ngModel)]="Product_Id"></ion-input>
+      </ion-item>
+      <ion-item>
+      <ion-label position="floating" >Enter Item Name</ion-label>
+      <ion-input [(ngModel)]="Product_Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" >Enter Brand</ion-label>
+      <ion-input [(ngModel)]="Brand"></ion-input>
+    </ion-item>
+    <ion-item><ion-label>Category</ion-label>
+      <ion-select placeholder="Select One" [(ngModel)]="product_category_id">
+        <ion-select-option value="1">Electronics</ion-select-option>
+        <ion-select-option value="2">Grocery</ion-select-option>
+        <ion-select-option value="3">Crockery</ion-select-option>
+        <ion-select-option value="4">Sports</ion-select-option>
+        <ion-select-option value="5">Furniture</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Price</ion-label>
+      <ion-input type="number"[(ngModel)]="Sale_Price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cost</ion-label>
+      <ion-input type="number" [(ngModel)]="Purchase_Price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Quantity</ion-label>
+      <ion-input type="number" [(ngModel)]="Product_Qty"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Barcode</ion-label>
+      <ion-input [(ngModel)]="Product_Barcode" pattern="^\d{7}$"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">pack</ion-label>
+      <ion-input [(ngModel)]="Pack"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Discount</ion-label>
+      <ion-input  [(ngModel)]="Discount"></ion-input>
+    </ion-item>
+      <ion-button color="#2F3C7E" class="b2" expand="block" (click)="updateInventory()">Update Inventory</ion-button>
+    </ion-list>
+</div>
+</ion-content>

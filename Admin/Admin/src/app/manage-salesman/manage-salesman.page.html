@@ -1,0 +1,95 @@
+<ion-header class="mainTitle">
+  <ion-toolbar color="primary" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu-button"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mainTitle">Salesman Management</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngFor="let item of rest_data?.categories">
+    {{item?.name}}
+
+  </div>
+
+  <ion-segment [(ngModel)]="pet" scrollable>
+    <ion-segment-button value="add">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <b>Add Salesman</b>
+    </ion-segment-button>
+    <ion-segment-button value="view" checked>
+      <ion-icon name="create"></ion-icon>
+      <b>View Salesman</b>
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'add'"  padding>
+      
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input [(ngModel)]="Salesman_Name" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input [(ngModel)]="Email" type="email" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Contact</ion-label>
+          <ion-input [(ngModel)]="Contact" type="number" pattern="^\d{11}$"></ion-input>
+        </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input [(ngModel)]="Password" pattern="^(?=.*\d).{4,15}$"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Join Date</ion-label>
+        <ion-input [(ngModel)]="Salesman_Join_Date"></ion-input>
+      </ion-item>
+    
+      
+
+      <ion-button color="#BA7B48" class="b2" expand="block" (click)="addSalesman()" >Add Salesman</ion-button>
+
+
+    </ion-list>
+
+
+
+    <ion-list *ngSwitchCase="'view'" ngSelect="selected">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+              <ion-col size="1">
+                  <b>Id</b>
+                </ion-col>
+            <ion-col size="4">
+              <b>Name</b>
+            </ion-col>
+            <ion-col size="5">
+              <b>Email</b>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item *ngFor="let data of getSalesman">
+        <ion-grid>
+          <ion-row>
+              <ion-col class="users" size="1">
+                  <div>{{data.Salesman_Id}}</div>
+                </ion-col>
+            <ion-col class="users" size="4">
+              <div>{{data.Salesman_Name}}</div>
+            </ion-col>
+            <ion-col class="users" size="5">
+                <div>{{data.Email}}</div>
+              </ion-col>
+            <ion-col>
+              <ion-icon name="arrow-dropright-circle" (click)="RedirectMe()" color='#BA7B48'></ion-icon>
+            </ion-col>
+              
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

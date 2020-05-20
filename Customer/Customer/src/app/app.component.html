@@ -1,0 +1,127 @@
+<style>
+    .splash{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #272d38;
+    }
+    .Logo{
+     width: 200px;
+     height: 200px;
+    }
+    img{
+     width: 200px;
+     height: 200px;
+    }
+
+
+    #MenuImg{
+        height: 130px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top:20px;
+        margin-bottom: 20px;
+    }
+
+
+
+    .sk-folding-cube {
+        margin: 20px auto;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        -webkit-transform: rotateZ(45deg);
+        transform: rotateZ(45deg);
+    }
+    .spinner {
+  margin: 100px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color:#BA7B48;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+ /*   img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-left: 35%;
+ }*/
+
+
+</style>
+<div *ngIf="showSplash" class="splash">
+    <div class="Logo">
+        <img src="\assets\AppLogo.gif" >
+        <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+              </div>
+
+    </div>
+</div>
+
+<ion-app>
+    <ion-split-pane >
+        <ion-menu swipe-gesture="false">
+
+            <ion-content color="primary">
+                    
+                            <img src="\assets\AppLogo.gif" id="MenuImg">
+                          
+                <ion-list style="background: #1C2A2E">
+                    <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+                        <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" color="primary">
+                            <ion-icon slot="start" [name]="p.icon" style="color:#BA7B48"></ion-icon>
+                            <ion-label style="color:#D3BC91">
+                                {{p.title}}
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                </ion-list>
+            </ion-content>
+        </ion-menu>
+        <ion-router-outlet main></ion-router-outlet>
+    </ion-split-pane>
+</ion-app>

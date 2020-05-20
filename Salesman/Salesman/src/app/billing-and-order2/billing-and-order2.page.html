@@ -1,0 +1,91 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title >Billing & Order</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-segment [(ngModel)]="billing" scrollable>
+        <ion-segment-button value="b">
+          <ion-icon name="add"></ion-icon>
+          <b>Billing</b>
+        </ion-segment-button>
+        <ion-segment-button value="o" checked>
+          <ion-icon name="book"></ion-icon>
+          <b>Orders</b>
+        </ion-segment-button>
+      </ion-segment>
+      <div [ngSwitch]="billing">
+        <ion-list *ngSwitchCase="'b'" ngSelected="Select">
+          <ion-item>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  <b>Name</b>
+                </ion-col>
+                <ion-col size="3">
+                  <b>Price</b>
+                </ion-col>
+                <ion-col size="3">
+                  <b>Discount</b>
+                </ion-col>
+                <ion-col size="2">
+                  <b>Qty</b>
+                </ion-col>
+              </ion-row>
+              </ion-grid>
+          </ion-item>
+          <ion-item *ngFor="let data of getDetail">
+              <ion-grid>
+                <ion-row>
+                    <ion-col class="users" size="4">
+                        <div>{{data.Product_Name}}</div>
+                      </ion-col>
+                  <ion-col class="users" size="3">
+                    <div>{{data.Net_Price}}</div>
+                  </ion-col>
+                  <ion-col class="users" size="3">
+                      <div>{{data.Discount}}</div>
+                    </ion-col>
+                  <ion-col class="users" size="2">
+                      <div>{{data.Quantity}}</div>
+                    </ion-col>
+                    
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+
+            <ion-button color="#FBEAEB" expand="block" (click)="printData()" padding-horizontal>Confirm Order</ion-button>
+
+        </ion-list>
+        <ion-list *ngSwitchCase="'o'">
+            <ion-card>
+              <ion-card-content>
+                <img src="\assets\order.png" alt="">
+              </ion-card-content>
+            </ion-card>
+            
+              <ion-item *ngFor="let data of getOrders">
+                <ion-grid >
+                  <ion-row>
+                    <ion-col size="8">
+                      <h4>Order {{data.Order_Id}}</h4>
+                    </ion-col> 
+                    <ion-col size="4">
+                      <ion-button (click)="RedirectMeToOrders(data.Order_Id)">View</ion-button>
+                    </ion-col>
+                    </ion-row>
+                </ion-grid>
+              </ion-item>
+            </ion-list>
+  
+  
+  
+          
+      </div>
+  
+    </ion-content>
+  
